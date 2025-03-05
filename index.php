@@ -385,6 +385,14 @@ https://templatemo.com/tm-580-woox-travel
       clearInterval(bannerTimer);
       bannerTimer = setInterval(bannerSwitcher, 5000)
     });
+
+    fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector("#banner h1").textContent = data.bannerText;
+            document.querySelector("#banner p").textContent = data.subText;
+        });
+
   </script>
 
   </body>
